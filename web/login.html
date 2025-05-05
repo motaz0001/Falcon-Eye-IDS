@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <title>FalconEye</title>
+      <link rel="stylesheet" href="Login.css">
+   </head>
+   <body>
+      <div class="loginCard">
+         <img src="logo.png">
+         <div class="cardHeader">
+         </div>
+         <form id="loginForm">
+            <div class="formGroup">
+               <label for="username">Username:</label>
+               <input required="" name="username" id="username" type="text" autofocus>
+            </div>
+            <div class="formGroup">
+               <label for="password">Password:</label>
+               <input required="" name="password" id="password" type="password">
+            </div>
+            <div class="formGroup">
+               <input value="Login" type="submit">
+            </div>
+         </form>
+         <p id="response"></p>
+      </div>
+      <script>
+         document.getElementById('loginForm').addEventListener('submit', async (event) => {
+         event.preventDefault();
+         username = document.getElementById('username').value;
+         password = document.getElementById('password').value;
+         try {
+             const response = await fetch('http://127.0.0.1:5000/login?username=' + username + '&password=' + password ,{
+                 method: 'GET',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 credentials: 'include'
+             });
+             if (response.ok) {
+                 window.location.href = 'FalconEye.html';
+             } else if (response.status === 401) {
+                 document.getElementById('response').textContent = 'Invalid username or password.';
+             } else {
+                 document.getElementById('response').textContent = 'An error1 occurred';
+             }
+         } catch (error) {
+             document.getElementById('response').textContent = 'An error2 occurred'+ error;
+         }
+         });
+      </script>
+   </body>
+</html>

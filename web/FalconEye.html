@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>FalconEye</title>
+      <link rel="stylesheet" href="FalconEye.css">
+   </head>
+   <body>
+      <div class="header">
+         FalconEye
+         <div class="logout" id = "logout"><u>Logout</u></div>
+      </div>
+      <div class="tabs">
+         <div id="alert" class="atab">Alerts</div>
+         <div id="logs" class="tab">Logs</div>
+         <div id="traffic" class="tab">Traffic</div>
+         <div id="tools" class="tab">Tools</div>
+      </div>
+      <br>
+      <!-- Start of Alert Section -->
+      <div id='calert' class="container">
+         <div class="title" >
+            Alerts
+         </div>
+         <div class="ctable">
+            <table id='atable' class="table">
+               <tr>
+                  <th>Time</th>
+                  <th>Source IP</th>
+                  <th>Source Port</th>
+                  <th>Destination Port</th>
+                  <th>Protocol</th>
+                  <th>Detection Reason</th>
+               </tr>
+            </table>
+         </div>
+         <div class="title" style="margin-top: 50px;" >
+            Suspicious
+         </div>
+         <div class="ctable" style="margin-bottom: 100px;">
+            <table id='stable' class="table" >
+               <tr>
+                  <th>Time</th>
+                  <th>Source IP</th>
+                  <th>Source Port</th>
+                  <th>Destination Port</th>
+                  <th>Protocol</th>
+                  <th>Detection Reason</th>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <!-- End of Alert Section -->
+      <!-- start of logs Section -->
+      <div id='clogs' class="container" style="display: none;">
+         <div class="title">Logs</div>
+      </div>
+      <!-- end of logs Section -->
+      <!-- start of traffic Section -->
+      <div id='ctraffic' class="container" style="display: none;">
+         <div class="title">Network Traffic</div>
+         <div class="ctable">
+            <table id="ttable" class="table">
+               <tr>
+                  <th>Time</th>
+                  <th>Source IP</th>
+                  <th>Source Port</th>
+                  <th>Destination IP</th>
+                  <th>Destination Port</th>
+                  <th>Protocol</th>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <!-- end of traffic Section -->
+      <!-- start of tools Section -->
+      <div id='cscan' class="container" style="display: none;">
+         <!-- file scan -->
+         <div class="title">File Scan</div>
+         <div class="scan">
+            <h2>Upload a File to Scan</h2>
+            <label for="fileInput" class="b">
+            Choose File
+            </label>
+            <input type="file" id="fileInput">
+            <button id="fileScan">Scan</button>
+            <p id="fileStatus"></p>
+            <p id="fileResult"></p>
+         </div>
+         <!-- url scan -->
+         <div class="title">URL Scan</div>
+         <div class="scan">
+            <h2>Enter URL to Scan</h2>
+            <input type="text" id="urlInput">
+            <button id="urlScan">Scan</button>
+            <p id="urlStatus"></p>
+            <p id="urlResult"></p>
+         </div>
+         <!-- ip scan -->
+         <div class="title">IP Scan</div>
+         <div class="scan">
+            <h2>Enter IP to Scan</h2>
+            <input type="text" id="ipInput">
+            <button id="ipScan">Scan</button>
+            <p id="ipStatus"></p>
+            <p id="ipResult"></p>
+         </div>
+      </div>
+      <!-- end of tools Section -->
+      <script src="script.js"></script>
+   </body>
+</html>
