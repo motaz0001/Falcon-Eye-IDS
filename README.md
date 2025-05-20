@@ -5,10 +5,10 @@ An Enhanced Intrusion Detection System Using Machine Learning Combined with Help
 Falcon Eye uses two machine learning algorithms (Decision Tree, Random Forest) to enhance the detection process by learning the patterns of an attack and using these patterns later for real-time detection.
 Falcon Eye also provides some helpful tools similar to popular tools functionalities like Wireshark, Tcpdump, Dig, Whois, and VirusTotal file and URL scan all in one place.
 
-# Buliding The System
+# Building The System
 Few steps needed before start using Falcon Eye
 1. Run `training/train_preprocess.py` to process the dataset into machine learning compatible types.
-2. Run `model/model.py` to bulid the machine learning models.
+2. Run `model/model.py` to build the machine learning models.
 3. Enter the username and passsword you want inside `api.py` in line 19.
 4. Enter your virus total api key inside `web/script.js` in line 1.
 5. Edit the path to paythonw inside `falconEye.bat`
